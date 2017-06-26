@@ -10,7 +10,7 @@ RUN yum install -y git tar zip unzip which java-1.8.0-openjdk-devel && \
     yum clean all && \
     useradd -u 1001 -r -m -d ${HOME} -s /sbin/nologin -c "Jenkins Slave" jenkins-slave && \
     mkdir -p /opt/jenkins-slave/bin /var/lib/jenkins && \
-    curl -fsSL http://archive.apache.org/dist/maven/maven-3/$MAVEN_VERSION/binaries/apache-maven-$MAVEN_VERSION-bin.tar.gz | tar xzf - -C /usr/share \
+    curl -fsSLv http://archive.apache.org/dist/maven/maven-3/$MAVEN_VERSION/binaries/apache-maven-$MAVEN_VERSION-bin.tar.gz | tar xzf - -C /usr/share \
       && mv /usr/share/apache-maven-$MAVEN_VERSION /usr/share/maven \
       && ln -s /usr/share/maven/bin/mvn /usr/bin/mvn
 
